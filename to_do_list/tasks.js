@@ -13,10 +13,6 @@ export function creatTask(name,details,status){
     status})
 }
 
-export function shwoTasks(){
-    return tasks
-}
-
 export function updatTask(name){
     tasks.forEach((upd)=>{
         if(name === upd.name){
