@@ -7,7 +7,8 @@ return DB.users.push({
     username,
     role,
     id: nanoid()
-})
+}),
+    DB.lastUpdate = new Date();
 }
 
 export function readById(id){
@@ -27,6 +28,7 @@ export function updateUser(id){
         }
         else{console.log("No user with that id was found.")};
     });
+    DB.lastUpdate = new Date();
 };
 
 export function deleteUser(id){
@@ -40,8 +42,9 @@ export function deleteUser(id){
         else{console.log("Stay calm, it won't be deleted")};
         }
         else{console.log("No user with that id was found.")};
-    })
-}
+    });
+    DB.lastUpdate = new Date();
+};
 
 export function searchByUsername(username){
     const usernam = DB.users.filter((user)=>{

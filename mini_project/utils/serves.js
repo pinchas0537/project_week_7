@@ -1,3 +1,4 @@
+import { DB } from "../DB/db.js";
 import { creatUser, deleteUser, readById, searchByUsername, updateUser } from "./users.js";
 import input from "analiza-sync"
 
@@ -43,6 +44,7 @@ export function showAllmenu(){
 
             case "6":
                 fleag = false;
+                console.log("The last change was in:",DB.lastUpdate)
                 break;
 
             default:console.log("There is no such possibility.")
